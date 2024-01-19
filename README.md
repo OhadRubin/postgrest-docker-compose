@@ -107,3 +107,6 @@ Right click on one of the tables and select `View/Edit Data >  First 100 Rows` y
 [Nginx Documentation](https://nginx.org/en/docs/)
 [PGAdmin Documetation](https://www.pgadmin.org/docs/)
 [PostgREST-py](https://github.com/supabase-community/postgrest-py)
+
+
+<!-- https://gist.github.com/oofnikj/4ee432033421f34b548ae2891067efcf -->

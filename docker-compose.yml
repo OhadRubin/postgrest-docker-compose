@@ -89,7 +89,7 @@ services:
     container_name: swagger-ui
     image: swaggerapi/swagger-ui:latest
     ports:
-      - "8080:8080"
+      - "8090:8080"
     environment:
       - API_URL=http://localhost:3000/
     restart: always
@@ -110,6 +110,21 @@ services:
       - postgrest
     networks:
       - front-end
+      - back-end
+  backup_worker:
+    build:
+      context: .
+      dockerfile: backup_worker_dockerfile.Dockerfile
+    volumes:
+      - "./backup:/backup"
+      - "./scripts:/scripts"
+      - local_pgdata:/var/lib/postgresql/data:ro
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    entrypoint: ["/bin/bash", "/scripts/schedule_backup.sh"]
+    networks:
       - back-end
 
 volumes:
