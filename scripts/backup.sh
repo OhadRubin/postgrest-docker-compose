@@ -19,7 +19,6 @@ if [ -f "${BACKUP_FILE}" ]; then
 
     echo "Upload complete. Cleaning up local backup file..."
     # Clean up local backup file
-    rm "${BACKUP_FILE}"
 else
     echo "Backup failed. Backup file not created."
     exit 1
