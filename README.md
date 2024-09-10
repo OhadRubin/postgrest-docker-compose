@@ -58,16 +58,16 @@ Try the above two solutions together if you get a cannot load initd log message 
 
 Now test the REST Get statements:
 
-* [Get the cities in the database](http://localhost:3333/city)
-* [Get the countries in the database](http://localhost:3333/country)
-* [Get the languages in the database](http://localhost:3333/countrylanguage)
-* [Get cities named Springfield from the database](http://localhost:3333/city?name=eq.Springfield)
-* [Get cities in the USA city view with 'ie' in the name from the database](http://localhost:3333/v_usa_city?name=like.*ie*)
-* [Get cities with a population greater than or equal to 3,000,000](http://localhost:3333/city?population=gte.3333000)
-* [Get cities tha end in "Island"](http://localhost:3333/city?district=like.*Island)
-* [Get cities where the district like Island and the population is less than 1000; selecting only the city name](http://localhost:3333/city?district=like.*Island&population=lt.1000&select=id,name)
+* [Get the cities in the database](http://localhost:3000/city)
+* [Get the countries in the database](http://localhost:3000/country)
+* [Get the languages in the database](http://localhost:3000/countrylanguage)
+* [Get cities named Springfield from the database](http://localhost:3000/city?name=eq.Springfield)
+* [Get cities in the USA city view with 'ie' in the name from the database](http://localhost:3000/v_usa_city?name=like.*ie*)
+* [Get cities with a population greater than or equal to 3,000,000](http://localhost:3000/city?population=gte.3000000)
+* [Get cities tha end in "Island"](http://localhost:3000/city?district=like.*Island)
+* [Get cities where the district like Island and the population is less than 1000; selecting only the city name](http://localhost:3000/city?district=like.*Island&population=lt.1000&select=id,name)
 
-**NOTE**: All calls to port 3333 are routed through the Nginx reverse proxy. You can find the description of the reverse proxy in the `nginx` section of the `docker-compose` and `Dockerfile` scripts in the repository. 
+**NOTE**: All calls to port 3000 are routed through the Nginx reverse proxy. You can find the description of the reverse proxy in the `nginx` section of the `docker-compose` and `Dockerfile` scripts in the repository. 
 
 ## Swagger
 
